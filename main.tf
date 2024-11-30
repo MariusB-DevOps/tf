@@ -1,14 +1,3 @@
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = ">= 5.64.0"
-    }
-  }
-  required_version = ">= 1.9.5"
-}
-
-marius@ubuntu-devops:~/sciitdevops/terraform/terraform-modules/tf-s3-module$ cat main.tf
 locals {
   common_tags = {
     ManagedBy = "Terraform"
@@ -48,4 +37,3 @@ module "s3_buckets" {
 
   tags = merge(local.common_tags, var.extra_tags)
 }
-
